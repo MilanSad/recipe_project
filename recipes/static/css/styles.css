@@ -1,19 +1,21 @@
+/* Obecné styly pro body a hlavičky */
 body {
     font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
     text-align: center;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
-    width: 100%;
+}
+
+/* Styly pro layout */
+.container {
+    display: flex;
+    height: 100vh;
 }
 
 .sidebar {
@@ -29,7 +31,7 @@ header {
 }
 
 .sidebar ul li {
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 .sidebar ul li a {
@@ -42,10 +44,11 @@ header {
     padding: 20px;
 }
 
+/* Styly pro tabulku s recepty */
 .recipe-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .recipe-table th, .recipe-table td {
