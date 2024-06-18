@@ -36,7 +36,7 @@ def user_login(request):
 @login_required
 def user_logout(request):
     logout(request)
-    return redirect('recipe_list')
+    return redirect('recipes/logout.html')
 
 def recipe_list(request):
     recipes = Recipe.objects.all()
