@@ -2,31 +2,33 @@
 <html>
 <head>
     <title>{% block title %}My Recipes{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <header>
-        <h1>My Recipes</h1>
-        <nav>
+        <h1>Moje recepty</h1>
+        <nav class="sidebar">
             <ul>
-                <li><a href="{% url 'recipe_list' %}">Recipes</a></li>
-                <li><a href="{% url 'add_recipe' %}">Add Recipe</a></li>
+                <li><a href="{% url 'recipe_list' %}">Recepty</a></li>
+                <li><a href="{% url 'add_recipe' %}">Přidat recept</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="{% url 'logout' %}">Odhlášní</a></li>
                 {% else %}
-                <li><a href="{% url 'login' %}">Login</a></li>
-                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Přihlášení</a></li>
+                <li><a href="{% url 'register' %}">Registrace</a></li>
                 {% endif %}
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="content">
         {% block content %}
         {% endblock %}
     </main>
 
     <footer>
-        <p>&copy; 2024 My Recipes</p>
+        <p>&copy; 2024 Moje recepty</p>
     </footer>
 </body>
 </html>

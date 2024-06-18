@@ -3,11 +3,11 @@
 {% block title %}Add Recipe{% endblock %}
 
 {% block content %}
-    <h1>Add Recipe</h1>
+    <h1>Přidat recept</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Add Recipe</button>
+        <button type="submit">Přidat recept</button>
     </form>
-    <p><a href="{% url 'recipe_list' %}">Back to Recipe List</a></p>
+    <p><a href="{% url 'recipe_list' %}">Zpět na seznam receptů</a></p>
 {% endblock %}

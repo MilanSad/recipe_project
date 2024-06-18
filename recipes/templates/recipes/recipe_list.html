@@ -3,14 +3,14 @@
 {% block title %}Recipe List{% endblock %}
 
 {% block content %}
-    <h1>Recipe List</h1>
-    <table>
+    <h1>Seznam receptů</h1>
+    <table class="recipe-table">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Ingredients</th>
-                <th>Instructions</th>
+                <th>Název</th>
+                <th>Popis</th>
+                <th>Ingredience</th>
+                <th>Postup přípravy</th>
             </tr>
         </thead>
         <tbody>
@@ -25,10 +25,10 @@
         </tbody>
     </table>
     {% if user.is_authenticated %}
-        <p><a href="{% url 'add_recipe' %}">Add a new recipe</a></p>
-        <p><a href="{% url 'logout' %}">Logout</a></p>
+        <p><a href="{% url 'add_recipe' %}">Přidat nový recept</a></p>
+        <p><a href="{% url 'logout' %}">Odhlášení</a></p>
     {% else %}
-        <p><a href="{% url 'login' %}">Login</a></p>
-        <p><a href="{% url 'register' %}">Register</a></p>
+        <p><a href="{% url 'login' %}">Přihlášení</a></p>
+        <p><a href="{% url 'register' %}">Registrace</a></p>
     {% endif %}
 {% endblock %}
