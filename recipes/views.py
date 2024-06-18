@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegistrationForm, RecipeForm
 from .models import Recipe
+from django.contrib.auth import logout
 
 def register(request):
     if request.method == 'POST':
@@ -31,6 +32,11 @@ def user_login(request):
     else:
         form = AuthenticationForm()
     return render(request, 'recipes/login.html', {'form': form})
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect('recipe_list')
 
 def recipe_list(request):
     recipes = Recipe.objects.all()

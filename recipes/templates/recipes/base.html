@@ -8,24 +8,28 @@
 <body>
     <header>
         <h1>Moje recepty</h1>
+    </header>
+
+    <div class="container">
         <nav class="sidebar">
             <ul>
                 <li><a href="{% url 'recipe_list' %}">Recepty</a></li>
                 <li><a href="{% url 'add_recipe' %}">Přidat recept</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Odhlášní</a></li>
+                <li><a href="{% url 'logout' %}">Odhlášení</a></li>
                 {% else %}
                 <li><a href="{% url 'login' %}">Přihlášení</a></li>
                 <li><a href="{% url 'register' %}">Registrace</a></li>
                 {% endif %}
             </ul>
         </nav>
-    </header>
+
 
     <main class="content">
         {% block content %}
         {% endblock %}
     </main>
+</div>
 
     <footer>
         <p>&copy; 2024 Moje recepty</p>
