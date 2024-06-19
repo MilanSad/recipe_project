@@ -24,11 +24,5 @@
             {% endfor %}
         </tbody>
     </table>
-    {% if user.is_authenticated %}
-        <p><a href="{% url 'add_recipe' %}">Přidat nový recept</a></p>
-        <p><a href="{% url 'logout' %}">Odhlášení</a></p>
-    {% else %}
-        <p><a href="{% url 'login' %}">Přihlášení</a></p>
-        <p><a href="{% url 'register' %}">Registrace</a></p>
-    {% endif %}
+
 {% endblock %}

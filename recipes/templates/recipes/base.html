@@ -15,8 +15,11 @@
     <div class="container">
         <nav class="sidebar">
             <ul>
-                <li><a href="{% url 'recipe_list' %}">Recepty</a></li>
+                <li><form action="{% url 'recipe_list' %}">
+                    <button type="submit">Recepty</button>
+                </form></li>
                 <li><a href="{% url 'add_recipe' %}">Přidat recept</a></li>
+                <li><a href="{% url 'about' %}">O nás</a></li>
                 {% if user.is_authenticated %}
                 <li><form action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
