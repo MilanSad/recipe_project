@@ -6,5 +6,6 @@ urlpatterns = [
     path('login/', views.user_login, name='login'),
     path('', views.recipe_list, name='recipe_list'),  # Zde upravujeme URL pro seznam receptů
     path('add/', views.add_recipe, name='add_recipe'),
+    path('about/', views.about, name='about'),
     path('logout/', views.user_logout, name='logout'),
 ]
