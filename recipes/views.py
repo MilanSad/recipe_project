@@ -6,6 +6,7 @@ from .forms import UserRegistrationForm, RecipeForm
 from .models import Recipe
 from django.contrib.auth import logout
 
+
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)

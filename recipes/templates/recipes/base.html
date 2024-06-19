@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>{% block title %}My Recipes{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
 </head>
 <body>
     <header>
@@ -16,7 +18,10 @@
                 <li><a href="{% url 'recipe_list' %}">Recepty</a></li>
                 <li><a href="{% url 'add_recipe' %}">Přidat recept</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Odhlášení</a></li>
+                <li><form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Odhlásit se</button>
+                    </form></li>
                 {% else %}
                 <li><a href="{% url 'login' %}">Přihlášení</a></li>
                 <li><a href="{% url 'register' %}">Registrace</a></li>
@@ -25,14 +30,16 @@
         </nav>
 
 
-    <main class="content">
-        {% block content %}
+   <main class="content">
+         {% block content %}
         {% endblock %}
     </main>
 </div>
 
     <footer>
         <p>&copy; 2024 Moje recepty</p>
-    </footer>
+        <p><a href="https://www.privacypolicyonline.com/live.php?token=GEMPIKP3d6aZZMMaP0sP7XEwsHX2asYa"  target="_blank" >Our Privacy Policy</a></p>
+    </footer>href=
+
 </body>
 </html>
